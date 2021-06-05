@@ -2,6 +2,7 @@
     const $ = window.$;
     const Handlebars = window.Handlebars;
     const Http = new XMLHttpRequest();
+    const URL = "https://ddcompanion.herokuapp.com"
 
     const main = $('#app');
 
@@ -48,28 +49,47 @@
             let $this = $(this);
             let image = $('#CharacterImage');
             let gender = $('#CharacterGender').val();
-            
+
             currentImage++;
-            
+
             if (currentImage >= CharacterImages[gender].length) currentImage = 0;
-            
+
             image.attr("src", "./assets/characters/" + CharacterImages[gender][currentImage]);
         })
         .on('click', 'a.backCharacter', (e) => {
             let $this = $(this);
             let image = $('#CharacterImage');
             let gender = $('#CharacterGender').val();
-            
+
             currentImage--;
 
             if (currentImage < 0) currentImage = CharacterImages[gender].length - 1;
 
             image.attr("src", "./assets/characters/" + CharacterImages[gender][currentImage]);
         })
-        .on('change', '#CharacterGender', (e)=> {
+        .on('change', '#CharacterGender', (e) => {
             let val = $('#CharacterGender').val();
             currentImage = 0;
             let image = $('#CharacterImage');
             image.attr("src", "./assets/characters/" + CharacterImages[val][currentImage]);
+        })
+        .on('click', '.accion-mandar-mensaje', (e) => {
+            let contact = {
+                email: $("#contactCorreo").val(),
+                subject: $("#contactTopic").val(),
+                content: $("#contactMessage").val()
+            };
+            console.log(contact);
+            Http.open("POST", URL + "/contact/send", true);
+            Http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            Http.send(JSON.stringify(contact));
         });
+
+
+
+    Http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(Http.response);
+        }
+    }
 })(window)
