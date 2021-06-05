@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Helper</title>
+    <script src="https://kit.fontawesome.com/9297cc49ce.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic"
+        rel="stylesheet" />
+    <link href="//db.onlinewebfonts.com/c/e3e794f35cf6e4475f17d8f7a91df0a5?family=Tiamat+Condensed+SC+Regular"
+        rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <nav class="navbar basicBackground">
+            <a class="navbar-brand">D&amp;DC</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="navbar-item"><a href="#Home" class="navbar-link">Inicio</a></li>
+                    <li class="navbar-item"><a href="#CharacterCreation" class="navbar-link">Character Creation</a></li>
+                    <li class="navbar-item"><a href="#Contact" class="navbar-link">Contactanos</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="dungeonBackground" id="Home">
+            <div class="container" style="justify-content: center;">
+                <div class="separator"></div>
+                <div class="column" style="min-height: 100%; justify-content: center;">
+                    <h1 class="main-title">D&amp;D Companion</h1>
+                    <h3 class="slogan">Donde Rolear es sencillo</h3>
+                </div>
+            </div>
+        </section>
+        <section id="CharacterCreation" class="basicBackground">
+            <div class="separator"></div>
+            <div class="container">
+                <h2 class="sub-title">Crea tu Personaje</h2>
+                <div id="characterSheet">
+                    <div class="informationDisplay">
+                        <div class="column">
+                            <img class="characterImage" id="CharacterImage" src="./assets/characters/Male_01.png">
+                            <div class="row">
+                                <a class="backCharacter btn"><i class="fas fa-arrow-left" style="color: white;"></i></a>
+                                <a class="nextCharacter btn"><i class="fas fa-arrow-right"
+                                        style="color: white;"></i></a>
+                            </div>
+                        </div>
+                        <div class="characterInfo">
+                            <div class="grid-2">
+                                <div class="column">
+                                    <label for="CharacterName">Nombre:</label>
+                                    <input type="text" class="form-input" id="CharacterName"
+                                        placeholder="Bilbo Baggins">
+                                </div>
+                                <div class="column">
+                                    <label for="CharacterGender">Genero:</label>
+                                    <select name="CharacterGender" id="CharacterGender" class="form-input">
+                                        <option value="male">Masculino</option>
+                                        <option value="female">Femenino</option>
+                                    </select>
+                                </div>
+                                <div class="column">
+                                    <label for="charaterClass">Clase:</label>
+                                    <select name="characterClass" id="characterClass" class="form-input">
+                                        <option value="clerigo"
+                                            title="Los clerigos son los intemediarios entre el mundo mortal y el plano distante de los dioses. No son sacerdotes ordinarios, los clerigos llevan consigo magia divina.">
+                                            Clerigo</option>
+                                        <option value="peleador" selected>Peleador</option>
+                                        <option value="picaro">Picaro</option>
+                                        <option value="mago">Mago</option>
+                                    </select>
+                                </div>
+                                <div class="column">
+                                    <label for="characterRace">Raza:</label>
+                                    <select name="characterRace" id="characterRace" class="form-input">
+                                        <option value="enano">Enano</option>
+                                        <option value="elfo">Elfo</option>
+                                        <option value="mediano">Mediano</option>
+                                        <option value="humano" selected>Humano</option>
+                                    </select>
+                                </div>
+                                <div class="column">
+                                    <label for="characterAfinicion">Afinicion:</label>
+                                    <select name="characterAfinicion" id="characterAfinicion" class="form-input">
+                                        <option value="lg">Lawful good</option>
+                                        <option value="ng">Neutral Good</option>
+                                        <option value="cg">Cahotic Good</option>
+                                        <option value="ln">Lawful Neutral</option>
+                                        <option value="n">Neutral</option>
+                                        <option value="cn">Chaotic neutral</option>
+                                        <option value="le">Lawful Evil</option>
+                                        <option value="ne">Neutral Evil</option>
+                                        <option value="ce">Chaotic Evil</option>
+                                    </select>
+                                </div>
+                                <div class="column">
+                                    <label for="characterInspiration">Inspiracion:</label>
+                                    <select name="characterInspiration" id="characterInspiration" class="form-input">
+                                        <option value="acolyte">Acolito</option>
+                                        <option value="criminal">Criminal</option>
+                                        <option value="folkhero">Heroe del Folklore</option>
+                                        <option value="noble">Noble</option>
+                                        <option value="sage">Sabio</option>
+                                        <option value="soldier">Soldado</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="grid-2">
+                                <div class="column">
+                                    <label for="characterVitality">Vitalidad:</label>
+                                    <input type="number" class="form-input" id="characterVitality"
+                                        name="characterVitality">
+                                </div>
+                                <div class="column">
+                                    <label for="characterDexterity">Habilidad:</label>
+                                    <input type="number" class="form-input" id="characterDexterity"
+                                        name="characterDexterity">
+                                </div>
+                                <div class="column">
+                                    <label for="characterIntelligence">Inteligencia:</label>
+                                    <input type="number" class="form-input" id="characterIntelligence"
+                                        name="characterIntelligence">
+                                </div>
+                                <div class="column">
+                                    <label for="characterCarisma">Carisma:</label>
+                                    <input type="number" class="form-input" id="characterCarisma"
+                                        name="characterCharisma">
+                                </div>
+                                <div class="column">
+                                    <label for="characterLikes">Gustos:</label>
+                                    <textarea name="characterLikes" id="characterLikes" rows="10"
+                                        class="form-input"></textarea>
+                                </div>
+                                <div class="column">
+                                    <label for="characterDislikes">Disgustos:</label>
+                                    <textarea name="characterDislikes" id="characterDislikes" rows="10"
+                                        class="form-input"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Contact" class="dungeonBackground">
+            <div class="separator"></div>
+            <div class="container" style="min-height: 100%;">
+                <div class="column" style="min-height: 100%; justify-content: center;">
+                    <div class="contact-card">
+                        <h2 class="sub-title">Contactanos</h2>
+                        <hr>
+                        <div class="grid-2">
+                            <div class="column">
+                                <label for="contactCorreo" class="form-label">Correo:</label>
+                                <input type="email" name="contactCorreo" id="contactCorreo" class="form-input">
+                            </div>
+                            <div class="column">
+                                <label for="contactTopic" class="form-label">Asunto:</label>
+                                <input type="text" name="contactTopic" id="contactTopic" class="form-input">
+                            </div>
+                        </div>
+                        <div class="column">
+                            <label for="contactMessage" class="form-label">Mensaje:</label>
+                            <textarea name="contactMessage" id="contactMessage" rows="10" class="form-input"></textarea>
+                        </div>
+                        <br>
+                        <a class="btn accion-mandar-mensaje"
+                            style="border-radius: 5px; color: white; width: 100%;">Mandar Mensaje</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer" id="Footer">
+
+        </footer>
+    </div>
+    <script src="./js/characterCreation.js"></script>
+</body>
+
+</html>

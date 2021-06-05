@@ -1,0 +1,260 @@
+:root{
+    --header-font: "Open sans";
+    --title-font: "Tiamat Condensed SC Regular";
+    --background-basic: #e7e7db;
+    --background-alt: #9d0a0e;
+    --footer-background: rgb(50,50,50);
+    --nav-color: rgb(50, 50, 50);
+    --footer-color: #e7e7db;
+}
+
+* {
+    margin: 0;
+    font-family: 'Open sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section{
+    min-height: 100vh;
+}
+
+.dungeonBackground {
+    background: url("../assets/backgrounds/bg_wall.png");
+    -webkit-animation: scrollingBackground 10s linear infinite;
+    -moz-animation: scrollingBackground 10s linear infinite;
+    -o-animation: scrollingBackground 10s linear infinite;
+    animation: scrollingBackground 10s linear infinite;
+}
+
+.dungeonRock {
+    background: url("../assets//backgrounds/midground_center.png");
+}
+
+.solidGrayBackground{
+    background-color: gray;
+}
+
+.basicBackground {
+    background-color: var(--background-basic);
+}
+
+.altBackground{
+    background-color: var(--background-alt);
+}
+
+/**============================================
+ *               Titles
+ *=============================================**/
+
+.main-title {
+    color: white;
+    text-transform: uppercase;
+    font-size: 6rem;
+    width: 100%;
+    text-align: center;
+    font-family: var(--title-font), serif;
+}
+
+.slogan {
+    color: white;
+    font-family: var(--header-font), serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.sub-title {
+    color: var(--background-alt);
+    font-size: 4rem;
+    font-family: var(--title-font), serif;
+}
+
+/**============================================
+ *               Navbar
+ *=============================================**/
+
+nav.navbar {
+    display: flex;
+    padding-left: 1rem;
+    min-height: 7vh;
+    position: fixed;
+    width: 100vw;
+    font-weight: 600;
+    color: var(--nav-color);
+}
+
+a.navbar-brand {
+    text-decoration: none;
+    font-size: x-large;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+ul.navbar-nav {
+    display: flex;
+    list-style: none;
+    height: 100%;
+}
+
+li.navbar-item {
+    justify-content: center;
+    height: 100%;
+}
+
+a.navbar-link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    color: var(--nav-color);
+    padding: 1rem;
+}
+
+/**============================================
+ *               Container
+ *=============================================**/
+
+.container {
+    padding: 1rem 6rem 1rem;
+    height: 100vh;
+}
+
+label {
+    display: inline-block;
+    width: 5em;
+}
+
+/**============================================
+ *               Character Sheet
+ *=============================================**/
+
+.informationDisplay {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 1rem;
+}
+
+.characterImage {
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+#CharacterSheet {
+    max-height: 60vh;
+}
+
+.nextCharacter, .backCharacter {
+    width: 100%;
+    background-color: var(--nav-color) !important;
+}
+
+.nextCharacter {
+    border-radius: 0px 0px 5px 0px;
+}
+.backCharacter {
+    border-radius: 0px 0px 0px 5px;
+}
+
+/**============================================
+ *               Forms
+ *=============================================**/
+
+.form-label{
+    font-family: var(--title-font), sans-serif;
+    font-weight: 100;
+}
+
+.form-input {
+    font-family: 'Open sans', sans-serif;
+    font-weight: 200;
+    border-radius: 5px;
+    border: 2px solid gray;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+/**============================================
+ *               Buttons
+ *=============================================**/
+
+.btn {
+    background-color: var(--background-alt);
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem 0.75rem;
+}
+
+/**============================================
+ *               Grids
+ *=============================================**/
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 2rem;
+}
+
+/**============================================
+*               Flex Displays
+*=============================================**/
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+/**============================================
+ *               Card Display
+ *=============================================**/
+
+.contact-card {
+    padding: 1rem 3rem;
+    background-color: var(--background-basic);
+    border-radius: 5px;
+}
+
+/**============================================
+ *               Utils
+ *=============================================**/
+
+.separator {
+    height: 7vh;
+}
+
+/**========================================================================
+ *                           Animations
+ *========================================================================**/
+
+@-webkit-keyframes scrollingBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 105% 105%;
+    }
+}
+
+@media(max-width: 720px) {
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem 2rem;
+    }
+    .informationDisplay {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
