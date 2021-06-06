@@ -1,9 +1,9 @@
-:root{
+:root {
     --header-font: "Open sans";
     --title-font: "Tiamat Condensed SC Regular";
     --background-basic: #e7e7db;
     --background-alt: #9d0a0e;
-    --footer-background: rgb(50,50,50);
+    --footer-background: rgb(50, 50, 50);
     --nav-color: rgb(50, 50, 50);
     --footer-color: #e7e7db;
 }
@@ -17,7 +17,7 @@ html {
     scroll-behavior: smooth;
 }
 
-section{
+section {
     min-height: 100vh;
 }
 
@@ -33,7 +33,7 @@ section{
     background: url("../assets//backgrounds/midground_center.png");
 }
 
-.solidGrayBackground{
+.solidGrayBackground {
     background-color: gray;
 }
 
@@ -41,7 +41,7 @@ section{
     background-color: var(--background-basic);
 }
 
-.altBackground{
+.altBackground {
     background-color: var(--background-alt);
 }
 
@@ -155,6 +155,7 @@ label {
 .nextCharacter {
     border-radius: 0px 0px 5px 0px;
 }
+
 .backCharacter {
     border-radius: 0px 0px 0px 5px;
 }
@@ -163,7 +164,7 @@ label {
  *               Forms
  *=============================================**/
 
-.form-label{
+.form-label {
     font-family: var(--title-font), sans-serif;
     font-weight: 100;
 }
@@ -223,6 +224,79 @@ label {
     padding: 1rem 3rem;
     background-color: var(--background-basic);
     border-radius: 5px;
+}
+
+/**============================================
+ *               Modals
+ *=============================================**/
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 10;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Body */
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+/* Modal Footer */
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Modal Content */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 40% auto;
+    /* 15% from the top and centered */
+    padding: 0;
+    width: 60%;
+    /* Could be more or less, depending on screen size */
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: var(--background-alt);
+    color: var(--background-basic);
+}
+
+textarea {
+    resize: none;
 }
 
 /**============================================

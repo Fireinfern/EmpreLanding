@@ -3,6 +3,7 @@
     const Handlebars = window.Handlebars;
     const Http = new XMLHttpRequest();
     const URL = "https://ddcompanion.herokuapp.com"
+    //const URL = "http://localhost:3000"
 
     const main = $('#app');
 
@@ -83,6 +84,9 @@
             Http.open("POST", URL + "/contact/send", true);
             Http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             Http.send(JSON.stringify(contact));
+        })
+        .on('click', '.close', (e) => {
+            $("#Modal").css("display", "none");
         });
 
 
@@ -90,6 +94,7 @@
     Http.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log(Http.response);
+            $("#Modal").css("display", "block");
         }
     }
 })(window)
