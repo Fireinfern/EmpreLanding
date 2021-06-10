@@ -49,12 +49,88 @@
                 </div>
             </div>
         </div>
+        <div class="modal" id="InfoModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="closeInfo">&times;</span>
+                    <h2>Recibe Noticias y Mas informacion</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="column"></div>
+                    <br>
+                    <input type="email" class="form-input" style="width: 98%;" placeholder="Correo" id="CorreoInformacion">
+                    <br>
+                    <br>
+                    <a class="btn confirmar" style="border-radius: 5px;">Confirmar</a>
+                    <br>
+                </div>
+            </div>
+        </div>
         <section class="dungeonBackground" id="Home">
-            <div class="container" style="justify-content: center;">
+            <div class="container" style="justify-content: center; height: 100vh;">
                 <div class="separator"></div>
                 <div class="column" style="min-height: 100%; justify-content: center;">
                     <h1 class="main-title">D&amp;D Companion</h1>
                     <h3 class="slogan">Donde Rolear es sencillo</h3>
+                    <br>
+                    <div class="column" style="width: 100%; justify-content: center; align-items: center;">
+                        <a href="#Plans" class="btn" style="border-radius: 5px; color: white; width: 200px;">Mas
+                            Informacion &ThickSpace; <i class="fas fa-arrow-down"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="dungeonBackground" id="Plans">
+            <div class="separator"></div>
+            <div class="container" style="justify-content: center;">
+                <div class="grid-rodemap" style="margin: 1rem;">
+                    <div class="rodemap-card">
+                        <div class="rodemap-card-header">
+                            <h2 class="rodemap-card-title">Conectar Jugadores</h2>
+                        </div>
+                        <div class="column" style="width: 80%; margin: auto;">
+                            <br>
+                            <div style="width: 100%; display: flex; justify-content: center;">
+                                <i class="fas fa-handshake" style="font-size: 7em;"></i>
+                            </div>
+                            <br>
+                            <p class="card-content-text">Te ayudamos a buscar personas interesadas en empezar una
+                                campaña de Rol, y brindamos
+                                asistencia estos nuevos grupos de aventureros</p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="rodemap-card">
+                        <div class="rodemap-card-header">
+                            <h2 class="rodemap-card-title">Enseñar las Bases</h2>
+                        </div>
+                        <div class="column" style="width: 80%; margin: auto;">
+                            <br>
+                            <div style="width: 100%; display: flex; justify-content: center;">
+                                <i class="fas fa-chalkboard-teacher" style="font-size: 7em;"></i>
+                            </div>
+                            <br>
+                            <p class="card-content-text">Si te resultan complicadas las reglas de los jeugos de roles,
+                                nosotros y nuestra comunidad te ayudaran a aprender con mayor facilidad.</p>
+                        </div>
+                    </div>
+                    <div class="rodemap-card">
+                        <div class="rodemap-card-header">
+                            <h2 class="rodemap-card-title">Gestionar tus Campañas</h2>
+                        </div>
+                        <div class="column" style="width: 80%; margin: auto;">
+                            <br>
+                            <div style="width: 100%; display: flex; justify-content: center;">
+                                <i class="fas fa-chess-rook" style="font-size: 7em;"></i>
+                            </div>
+                            <br>
+                            <p class="card-content-text">Estamos trabajando en una plataforma para gestionar campañas de
+                                roles con diferentes funcionalidades para los Dungeon Master y para los jugadores.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%; display: flex; justify-content: center;">
+                    <a class="btn MoreInfo" style="border-radius: 5px; color: white; width: 400px;">Recibir Mas Informacion</a>
                 </div>
             </div>
         </section>
@@ -174,8 +250,8 @@
         </section>
         <section id="Contact" class="dungeonBackground">
             <div class="separator"></div>
-            <div class="container" style="min-height: 100%;">
-                <div class="column" style="min-height: 100%; justify-content: center;">
+            <div class="container" style="height: 100vh;">
+                <div class="column" style="height: 100%; justify-content: center;">
                     <div class="contact-card">
                         <h2 class="sub-title">Contactanos</h2>
                         <hr>

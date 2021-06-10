@@ -87,6 +87,27 @@
         })
         .on('click', '.close', (e) => {
             $("#Modal").css("display", "none");
+        })
+        .on('click', '.closeInfo', (e) => {
+            $("#InfoModal").css("display", "none");
+        })
+        .on('click', '.MoreInfo', (e) => {
+            $("#InfoModal").css("display", "block");
+        })
+        .on('click', '.confirmar', (e)=> {
+            let email = $("#CorreoInformacion").val();
+            let obj = {
+                email: email
+            }
+            Http.open("POST", URL + "/information/send", true)
+            Http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            Http.send(JSON.stringify(obj));
+        })
+        .on('click', '.saveCharacte', (e) => {
+            const character = {
+                name: $("#CharacterName").val(),
+                
+            }
         });
 
 
@@ -95,6 +116,7 @@
         if (this.readyState == 4 && this.status == 200) {
             console.log(Http.response);
             $("#Modal").css("display", "block");
+            $("#InfoModal").css("display", "none");
         }
     }
 })(window)
